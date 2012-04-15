@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express.createServer();
+var io = require('socket.io').listen(app);
+var show = require('./lib/show').init(io);
 
 app.configure(function() {
   app.use(express.errorHandler({ showStack: true, dumpExceptions: true }));

@@ -1,5 +1,4 @@
 body {
-  margin-top: 44px;
   background: #333;
 }
 body .container {
@@ -8,6 +7,7 @@ body .container {
 body .slideshow {
   width: 1024px;
   height: 768px;
+  margin: 0 auto;
   border: 1px solid #aaa;
 }
 body .slideshow .slide {

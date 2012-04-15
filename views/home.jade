@@ -2,10 +2,18 @@ extends layout
 
 block scripts
   script(language='javascript', src='/js/jquery.cycle.all.js')
+  script(language='javascript', src='/socket.io/socket.io.js')
   script(language='javascript', src='/js/presti.js')
 block content
   .row
-    .slideshow
-      .slide My slide
-      .slide Slide 2
-      .slide Slide 3
+    .span12
+      .slideshow
+        .slide
+          .content
+            h1 Welcome
+        .slide
+          .content
+            h2 This First
+        .slide
+          .content
+            h2 This Second
