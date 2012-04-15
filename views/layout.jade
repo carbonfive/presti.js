@@ -1,0 +1,15 @@
+!!! 5
+html
+  head
+    link(rel='stylesheet', href='/css/bootstrap.min.css', type='text/css')
+    link(rel='stylesheet', href='/css/site.css', type='text/css')
+    script(language='javascript', src='/js/jquery.min.js')
+    script(language='javascript', src='/js/bootstrap.min.js')
+    title= locals.title || 'Presti.js'
+    block scripts
+  body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        a.brand(href='/') Presti.js
+    .container
+      block content

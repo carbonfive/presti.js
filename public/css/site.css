@@ -1,0 +1,17 @@
+body {
+  margin-top: 44px;
+  background: #333;
+}
+body .container {
+  width: 1024px;
+}
+body .slideshow {
+  width: 1024px;
+  height: 768px;
+  border: 1px solid #aaa;
+}
+body .slideshow .slide {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
