@@ -1,4 +1,5 @@
 jQuery(function($){
+  var numberOfSlides = $('.slideshow').children().size();
   var slideNumber = 0;
   var show = io.connect();
 
@@ -10,16 +11,16 @@ jQuery(function($){
   $(document).keyup(onKeyReleased);
 
   function onSync(data) {
-    console.log(data);
+    slideNumber = data.slideNumber;
     $('.slideshow').cycle(data.slideNumber);
   }
 
   function onKeyReleased(event) {
     if(event.keyCode == 37) {
-      slideNumber = slideNumber <= 0 ? 2 : slideNumber - 1;
+      slideNumber = slideNumber <= 0 ? numberOfSlides - 1 : slideNumber - 1;
       show.emit('sync', { 'slideNumber' : slideNumber });
     } else if (event.keyCode == 39) {
-      slideNumber = slideNumber >= 2 ? 0 : slideNumber + 1;
+      slideNumber = slideNumber >= numberOfSlides - 1 ? 0 : slideNumber + 1;
       show.emit('sync', { 'slideNumber' : slideNumber });
     }
   }
