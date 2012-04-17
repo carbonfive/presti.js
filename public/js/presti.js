@@ -1,27 +1,26 @@
 jQuery(function($){
+  var slideNumber = 0;
   var show = io.connect();
 
   $('.slideshow').cycle({
     'fx' : 'none'
   }).cycle('pause');
 
-  show.on('next', onNext);
-  show.on('prev', onPrev);
+  show.on('sync', onSync);
   $(document).keyup(onKeyReleased);
 
-  function onNext() {
-    $('.slideshow').cycle('next');
-  }
-
-  function onPrev() {
-    $('.slideshow').cycle('prev');
+  function onSync(data) {
+    console.log(data);
+    $('.slideshow').cycle(data.slideNumber);
   }
 
   function onKeyReleased(event) {
     if(event.keyCode == 37) {
-      show.emit('prev');
+      slideNumber = slideNumber <= 0 ? 2 : slideNumber - 1;
+      show.emit('sync', { 'slideNumber' : slideNumber });
     } else if (event.keyCode == 39) {
-      show.emit('next');
+      slideNumber = slideNumber >= 2 ? 0 : slideNumber + 1;
+      show.emit('sync', { 'slideNumber' : slideNumber });
     }
   }
 });
