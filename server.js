@@ -2,6 +2,25 @@ var express = require('express');
 var app = express.createServer();
 var io = require('socket.io').listen(app);
 var show = require('./lib/show').init(io);
+var fs = require('fs');
+var _ = require('underscore');
+
+var slideFile = fs.readFileSync('slides.md','utf-8');
+var slides = new Array();
+var currentSlide = {
+  content : ''
+};
+
+_.each(slideFile.split('\n'), function(line) {
+  if(line.indexOf('!SLIDE') == 0) {
+    slides.push(currentSlide);
+    currentSlide = { content : '' };
+  } else {
+    currentSlide.content = currentSlide.content + '\n' + line;
+  }
+});
+slides.push(currentSlide);
+console.log(slides);
 
 app.configure(function() {
   app.use(express.errorHandler({ showStack: true, dumpExceptions: true }));
@@ -13,7 +32,7 @@ app.configure(function() {
 });
 
 app.get('/', function(request, response, next) {
-  response.render('home');
+  response.render('home', { slides : slides });
 });
 
 app.listen(8500);

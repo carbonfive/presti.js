@@ -8,15 +8,6 @@ block content
   .row
     .span12
       .slideshow
-        .slide
-          .content
-            h1 Welcome
-        .slide
-          .content
-            h2 This First
-        .slide
-          .content
-            h2 This Second
-        .slide
-          .content
-            h2 More Content
+        - for slide in slides
+          .slide
+            .content= slide.content
