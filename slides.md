@@ -39,3 +39,16 @@ Compiles JS to Native
 # They Both Found a Home
 ![Joyent](Joyent-logo.png)
 
+!SLIDE
+# .configure()
+
+    app.configure(function() {
+      app.use( /* functionality */);
+      app.set( /* setting[, value] */ );
+      app.enable( /* setting */ );
+      app.disable( /* setting */ );
+    });
+
+    app.configure('development', function() {
+      ...
+    });

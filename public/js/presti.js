@@ -3,6 +3,8 @@ jQuery(function($){
   var slideNumber = 0;
   var show = io.connect();
 
+  hljs.initHighlighting();
+
   $('.slideshow').cycle({
     'fx' : 'none'
   }).cycle('pause');

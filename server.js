@@ -21,6 +21,7 @@ _.each(slideFile.split('\n'), function(line) {
     currentSlide.content = currentSlide.content + '\n' + line;
   }
 });
+currentSlide.content = md.parse(currentSlide.content);
 slides.push(currentSlide);
 console.log(slides);
 
