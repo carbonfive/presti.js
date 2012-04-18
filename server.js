@@ -4,6 +4,7 @@ var io = require('socket.io').listen(app);
 var show = require('./lib/show').init(io);
 var fs = require('fs');
 var _ = require('underscore');
+var md = require('discount');
 
 var slideFile = fs.readFileSync('slides.md','utf-8');
 var slides = new Array();
@@ -13,6 +14,7 @@ var currentSlide = {
 
 _.each(slideFile.split('\n'), function(line) {
   if(line.indexOf('!SLIDE') == 0) {
+    currentSlide.content = md.parse(currentSlide.content);
     slides.push(currentSlide);
     currentSlide = { content : '' };
   } else {
