@@ -2,6 +2,9 @@ var express = require('express');
 var app = express.createServer();
 var io = require('socket.io').listen(app);
 var show = require('./lib/show').init(io);
+var slides = require('./lib/slides').parse('slides.md');
+
+console.log(slides);
 
 app.configure(function() {
   app.use(express.errorHandler({ showStack: true, dumpExceptions: true }));
@@ -13,7 +16,7 @@ app.configure(function() {
 });
 
 app.get('/', function(request, response, next) {
-  response.render('home');
+  response.render('home', { slides : slides });
 });
 
 app.listen(8500);
