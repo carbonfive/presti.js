@@ -7,9 +7,11 @@ block scripts
   script(language='javascript', src='/js/highlight.pack.js')
   script(language='javascript', src='/js/presti.js')
 block content
-  .row
-    .span12
+  .row.chat
+    .span9
       .slideshow
         - for slide in slides
           .slide
             .content!= slide.html
+    .span3
+      | Sidebar

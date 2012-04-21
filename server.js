@@ -19,4 +19,8 @@ app.get('/', function(request, response, next) {
   response.render('home', { slides : slides });
 });
 
+app.get('/chat', function(request, response, next) {
+  response.render('chat', { slides : slides });
+});
+
 app.listen(8500);
