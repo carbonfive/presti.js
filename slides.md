@@ -11,20 +11,7 @@ Highly Perfomant JS Engine
 
 Compiles JS to Native
 
-<ul>
-<li class="system-logo chrome"><img src="/image/what-is-node-js/chrome-logo.png" ></li>
-<li class="system-events browser">
-<p>load</p>
-<p>click</p>
-<p>submit</p>
-</li>
-<li class="system-logo nodejs"><img src="/image/what-is-node-js/nodejs-logo.png" ></li>
-<li class="system-events server">
-<p>connect</p>
-<p>read</p>
-<p>open</p>
-</li>
-</ul>
+test<ul> <li class="system-logo chrome"><img src="/image/what-is-node-js/chrome-logo.png" ></li> <li class="system-events browser"> <p>load</p> <p>click</p> <p>submit</p> </li> <li class="system-logo nodejs"><img src="/image/what-is-node-js/nodejs-logo.png" ></li> <li class="system-events server"> <p>connect</p> <p>read</p> <p>open</p> </li> </ul>
 
 !SLIDE
 # Created in 2009
