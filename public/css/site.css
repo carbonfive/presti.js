@@ -35,3 +35,23 @@ body .chat .slideshow {
 
   -moz-transform-origin: 0% 0%;
 }
+body .present .slideshow {
+  transform: scale(0.44921875, 0.44921875);
+  transform-origin: 0%, 0%;
+  -ms-transform: scale(0.44921875, 0.44921875);
+  /* IE 9 */
+
+  -ms-transform-origin: 0% 0%;
+  -webkit-transform: scale(0.44921875, 0.44921875);
+  /* Safari and Chrome */
+
+  -webkit-transform-origin: 0% 0%;
+  -o-transform: scale(0.44921875, 0.44921875);
+  /* Opera */
+
+  -o-transform-origin: 0% 0%;
+  -moz-transform: scale(0.44921875, 0.44921875);
+  /* Firefox */
+
+  -moz-transform-origin: 0% 0%;
+}

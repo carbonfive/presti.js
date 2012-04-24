@@ -8,6 +8,7 @@
     "socket.io" : "0.9.5",
     "discount" : "0.2.3",
     "connect-auth" : "0",
-    "connect" : "1"
+    "connect" : "1",
+    "mongodb" : "0"
   }
 }

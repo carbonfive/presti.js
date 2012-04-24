@@ -1,3 +1,16 @@
+.scale(@size) {
+  transform: scale(@size,@size);
+  transform-origin: 0%, 0%;
+  -ms-transform: scale(@size,@size); /* IE 9 */
+  -ms-transform-origin: 0% 0%;
+  -webkit-transform: scale(@size,@size); /* Safari and Chrome */
+  -webkit-transform-origin: 0% 0%;
+  -o-transform: scale(@size,@size); /* Opera */
+  -o-transform-origin: 0% 0%;
+  -moz-transform: scale(@size,@size); /* Firefox */
+  -moz-transform-origin: 0% 0%;
+ }
+
 body {
   background-image: url(../img/background.png);
 
@@ -20,17 +33,13 @@ body {
 
   .chat {
     .slideshow {
-      transform: scale(0.666666,0.666666);
-      transform-origin: 0%, 0%;
-      -ms-transform: scale(0.666666,0.666666); /* IE 9 */
-      -ms-transform-origin: 0% 0%;
-      -webkit-transform: scale(0.666666,0.666666); /* Safari and Chrome */
-      -webkit-transform-origin: 0% 0%;
-      -o-transform: scale(0.666666,0.666666); /* Opera */
-      -o-transform-origin: 0% 0%;
-      -moz-transform: scale(0.666666,0.666666); /* Firefox */
-      -moz-transform-origin: 0% 0%;
+      .scale(0.666666);
     }
   }
 
+  .present {
+    .slideshow {
+      .scale(0.44921875);
+    }
+  }
 }
