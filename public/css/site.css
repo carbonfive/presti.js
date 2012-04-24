@@ -1,17 +1,63 @@
 body {
-  background: #333;
+  background-image: url(../img/background.png);
 }
 body .container {
   width: 1024px;
 }
 body .slideshow {
   width: 1024px;
-  height: 768px;
   margin: 0 auto;
+  height: 768px;
   border: 1px solid #aaa;
 }
 body .slideshow .slide {
   width: 100%;
   height: 100%;
   background: #fff;
+}
+body .chat .slideshow {
+  transform: scale(0.5, 0.5);
+  transform-origin: 0%, 0%;
+  -ms-transform: scale(0.5, 0.5);
+  /* IE 9 */
+
+  -ms-transform-origin: 0% 0%;
+  -webkit-transform: scale(0.5, 0.5);
+  /* Safari and Chrome */
+
+  -webkit-transform-origin: 0% 0%;
+  -o-transform: scale(0.5, 0.5);
+  /* Opera */
+
+  -o-transform-origin: 0% 0%;
+  -moz-transform: scale(0.5, 0.5);
+  /* Firefox */
+
+  -moz-transform-origin: 0% 0%;
+}
+body .present .slideshow {
+  transform: scale(0.5, 0.5);
+  transform-origin: 0%, 0%;
+  -ms-transform: scale(0.5, 0.5);
+  /* IE 9 */
+
+  -ms-transform-origin: 0% 0%;
+  -webkit-transform: scale(0.5, 0.5);
+  /* Safari and Chrome */
+
+  -webkit-transform-origin: 0% 0%;
+  -o-transform: scale(0.5, 0.5);
+  /* Opera */
+
+  -o-transform-origin: 0% 0%;
+  -moz-transform: scale(0.5, 0.5);
+  /* Firefox */
+
+  -moz-transform-origin: 0% 0%;
+}
+body #message {
+  width: 100%;
+}
+body #messages img.profile {
+  width: 32px;
 }

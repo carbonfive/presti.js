@@ -7,9 +7,15 @@ block scripts
   script(language='javascript', src='/js/highlight.pack.js')
   script(language='javascript', src='/js/presti.js')
 block content
-  .row
-    .span12
+  .row.chat
+    .span7
       .slideshow
         - for slide in slides
           .slide
             .content!= slide.html
+    .span5
+      a(href='/logout') Logout
+      .well
+        h4 Chat
+        input#message
+        div#messages

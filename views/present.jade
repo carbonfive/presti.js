@@ -7,9 +7,11 @@ block scripts
   script(language='javascript', src='/js/highlight.pack.js')
   script(language='javascript', src='/js/presti.js')
 block content
-  .row
-    .span12
+  .row.present
+    .span6
       .slideshow
         - for slide in slides
           .slide
             .content!= slide.html
+    .span6
+      a(href='/logout') Logout

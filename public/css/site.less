@@ -1,5 +1,18 @@
+.scale(@size) {
+  transform: scale(@size,@size);
+  transform-origin: 0%, 0%;
+  -ms-transform: scale(@size,@size); /* IE 9 */
+  -ms-transform-origin: 0% 0%;
+  -webkit-transform: scale(@size,@size); /* Safari and Chrome */
+  -webkit-transform-origin: 0% 0%;
+  -o-transform: scale(@size,@size); /* Opera */
+  -o-transform-origin: 0% 0%;
+  -moz-transform: scale(@size,@size); /* Firefox */
+  -moz-transform-origin: 0% 0%;
+ }
+
 body {
-  background: #333;
+  background-image: url(../img/background.png);
 
   .container {
     width: 1024px;
@@ -7,8 +20,8 @@ body {
 
   .slideshow {
     width: 1024px;
-    height: 768px;
     margin: 0 auto;
+    height: 768px;
     border:1px solid #aaa;
 
     .slide {
@@ -18,4 +31,23 @@ body {
     }
   }
 
+  .chat {
+    .slideshow {
+      .scale(0.5);
+    }
+  }
+
+  .present {
+    .slideshow {
+      .scale(0.5);
+    }
+  }
+
+  #message {
+    width: 100%;
+  }
+
+  #messages {
+    img.profile { width: 32px; }
+  }
 }
