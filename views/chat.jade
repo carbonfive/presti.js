@@ -8,10 +8,14 @@ block scripts
   script(language='javascript', src='/js/presti.js')
 block content
   .row.chat
-    .span9
+    .span7
       .slideshow
         - for slide in slides
           .slide
             .content!= slide.html
-    .span3
+    .span5
       a(href='/logout') Logout
+      .well
+        h4 Chat
+        input#message
+        div#messages

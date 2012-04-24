@@ -16,42 +16,48 @@ body .slideshow .slide {
   background: #fff;
 }
 body .chat .slideshow {
-  transform: scale(0.666666, 0.666666);
+  transform: scale(0.5, 0.5);
   transform-origin: 0%, 0%;
-  -ms-transform: scale(0.666666, 0.666666);
+  -ms-transform: scale(0.5, 0.5);
   /* IE 9 */
 
   -ms-transform-origin: 0% 0%;
-  -webkit-transform: scale(0.666666, 0.666666);
+  -webkit-transform: scale(0.5, 0.5);
   /* Safari and Chrome */
 
   -webkit-transform-origin: 0% 0%;
-  -o-transform: scale(0.666666, 0.666666);
+  -o-transform: scale(0.5, 0.5);
   /* Opera */
 
   -o-transform-origin: 0% 0%;
-  -moz-transform: scale(0.666666, 0.666666);
+  -moz-transform: scale(0.5, 0.5);
   /* Firefox */
 
   -moz-transform-origin: 0% 0%;
 }
 body .present .slideshow {
-  transform: scale(0.44921875, 0.44921875);
+  transform: scale(0.5, 0.5);
   transform-origin: 0%, 0%;
-  -ms-transform: scale(0.44921875, 0.44921875);
+  -ms-transform: scale(0.5, 0.5);
   /* IE 9 */
 
   -ms-transform-origin: 0% 0%;
-  -webkit-transform: scale(0.44921875, 0.44921875);
+  -webkit-transform: scale(0.5, 0.5);
   /* Safari and Chrome */
 
   -webkit-transform-origin: 0% 0%;
-  -o-transform: scale(0.44921875, 0.44921875);
+  -o-transform: scale(0.5, 0.5);
   /* Opera */
 
   -o-transform-origin: 0% 0%;
-  -moz-transform: scale(0.44921875, 0.44921875);
+  -moz-transform: scale(0.5, 0.5);
   /* Firefox */
 
   -moz-transform-origin: 0% 0%;
+}
+body #message {
+  width: 100%;
+}
+body #messages img.profile {
+  width: 32px;
 }
