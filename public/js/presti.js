@@ -30,7 +30,7 @@ jQuery(function($){
       slideNumber = slideNumber >= numberOfSlides - 1 ? 0 : slideNumber + 1;
       show.emit('sync', { 'slideNumber' : slideNumber });
       return false;
-    } else {
+    } else if (code == 13) {
       $('#message').focus();
       return false;
     }
@@ -57,6 +57,7 @@ jQuery(function($){
     if(code == 13) {
       show.emit('message',
                 { message : $('#message').val() });
+      $('#message').val('');
       $(document).focus();
     }
   }
