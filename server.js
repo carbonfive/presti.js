@@ -53,19 +53,20 @@ function authenticate(request, response, next) {
     request.authenticate(function(error, authenticated) {
       if(error) next(new Error('Problem authenticating'));
       else if(authenticated === true) {
-        next();
+        return next();
       }
       else if(authenticated === false) {
-        next(new Error('Access Denied!'));
+        return next(new Error('Access Denied!'));
       } else {}
     });
   }
 }
 
 function isPresenter(request, response, next) {
-  console.log(request.getAuthDetails());
   if(request.getAuthDetails().user.email == 'rudy@carbonfive.com' ||
      request.getAuthDetails().user.email == 'alex@carbonfive.com') {
+    request.session['presenter'] = true;
+    request.session.save();
     return next();
   }
   return response.redirect('/');
