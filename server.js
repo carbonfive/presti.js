@@ -7,6 +7,8 @@ var sessionStore = new MemoryStore();
 var show = require('./lib/show').init(io,sessionStore);
 var slides = require('./lib/slides').parse('slides.md');
 var config = require('./config');
+var cluster = require('cluster');
+var os = require('os');
 
 app.configure(function() {
   app.use(express.errorHandler({ showStack: true, dumpExceptions: true }));
@@ -45,7 +47,14 @@ app.get('/present', authenticate, isPresenter, function(request, response, next)
   response.render('present', { slides : slides });
 });
 
-app.listen(config.port || 80);
+if (cluster.isMaster) {
+  console.log("CPUS: " + os.cpus().length);
+  for (var i = 0; i < os.cpus().length / 2; i++) {
+    var worker = cluster.fork();
+  }
+} else {
+  app.listen(config.port || 80);
+}
 
 function authenticate(request, response, next) {
   if(request.isAuthenticated()) next();
