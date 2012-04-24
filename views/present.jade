@@ -1,4 +1,17 @@
 extends layout
 
+block scripts
+  script(language='javascript', src='/js/jquery.cycle.all.js')
+  script(language='javascript', src='/socket.io/socket.io.js')
+  link(rel='stylesheet', href='/css/highlight/default.css', type='text/css')
+  script(language='javascript', src='/js/highlight.pack.js')
+  script(language='javascript', src='/js/presti.js')
 block content
-  p ADMIN ONLY
+  .row.preset
+    .span6
+      .slideshow
+        - for slide in slides
+          .slide
+            .content!= slide.html
+    .span6
+      a(href='/logout') Logout

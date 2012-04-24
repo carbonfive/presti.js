@@ -2,14 +2,19 @@ var express = require('express');
 var app = express.createServer();
 var io = require('socket.io').listen(app);
 var auth = require('connect-auth');
-var show = require('./lib/show').init(io);
+var MemoryStore = express.session.MemoryStore;
+var sessionStore = new MemoryStore();
+var show = require('./lib/show').init(io,sessionStore);
 var slides = require('./lib/slides').parse('slides.md');
 var config = require('./config');
 
 app.configure(function() {
   app.use(express.errorHandler({ showStack: true, dumpExceptions: true }));
   app.use(express.cookieParser());
-  app.use(express.session({ secret: config.sessionSecret }));
+  app.use(express.session(
+    { store: sessionStore,
+      secret: config.sessionSecret,
+      key: 'express.sid' }));
   app.use(auth([ auth.Google2(
     { appId: config.googleAppId,
       appSecret: config.googleAppSecret,
@@ -31,9 +36,8 @@ app.get('/chat', authenticate, function(request, response, next) {
 });
 
 app.get('/logout', function(request, response, next) {
-  if(request.isAuthenticated()) {
-    request.logout();
-  }
+  request.session.presenter = false;
+  request.logout();
   response.redirect('/');
 });
 
@@ -49,7 +53,6 @@ function authenticate(request, response, next) {
     request.authenticate(function(error, authenticated) {
       if(error) next(new Error('Problem authenticating'));
       else if(authenticated === true) {
-        console.log(requested.getAuthDetails());
         next();
       }
       else if(authenticated === false) {
@@ -60,13 +63,10 @@ function authenticate(request, response, next) {
 }
 
 function isPresenter(request, response, next) {
-  if(request.isAuthenticated()) {
-    var userAuthDetails = request.getAuthDetails();
-    console.log(userAuthDetails);
-    if(userAuthDetails.user.email == 'rudy@carbonfive.com' ||
-       userAuthDetails.user.email == 'alex@carbonfive.com') {
-      return next();
-    }
+  console.log(request.getAuthDetails());
+  if(request.getAuthDetails().user.email == 'rudy@carbonfive.com' ||
+     request.getAuthDetails().user.email == 'alex@carbonfive.com') {
+    return next();
   }
-  response.redirect('/');
+  return response.redirect('/');
 }
