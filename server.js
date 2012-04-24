@@ -45,7 +45,7 @@ app.get('/present', authenticate, isPresenter, function(request, response, next)
   response.render('present', { slides : slides });
 });
 
-app.listen(8500);
+app.listen(config.port || 80);
 
 function authenticate(request, response, next) {
   if(request.isAuthenticated()) next();
