@@ -68,6 +68,10 @@ body .logout {
 body #message {
   width: 95%;
 }
+body #online {
+  overflow-y: auto;
+  height: 60px;
+}
 body #online img {
   height: 20px;
   height: 20px;
