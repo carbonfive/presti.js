@@ -7,12 +7,13 @@ block scripts
   script(language='javascript', src='/js/highlight.pack.js')
   script(language='javascript', src='/js/presti.js')
 block content
-  .row.chat
-    .span7
-      include slideshow
-    .span5
-      a(href='/logout') Logout
-      .well
-        h4 Chat
-        input#message
-        div#messages
+  .container-fluid
+    .row-fluid.chat
+      .span3
+        a(href='/logout') Logout
+        .well
+          h4 Chat
+          input#message
+          div#messages
+      .span9
+        include slideshow
