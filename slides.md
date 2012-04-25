@@ -8,10 +8,11 @@
 
   [@rudy](http://twitter.com/rudy)
 
-* \#prestijs
+* _[Carbon Five](http://carbonfive.com)_ -
+  [@carbonfive](http://twitter.com/carbonfive)
 
 !SLIDE
-# presti.js
+# \#presti.js
 * http://prestijs.org/chat
 * https://github.com/carbonfive/presti.js
 
