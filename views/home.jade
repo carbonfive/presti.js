@@ -9,7 +9,4 @@ block scripts
 block content
   .row
     .span12
-      .slideshow
-        - for slide in slides
-          .slide
-            .content!= slide.html
+      include slideshow

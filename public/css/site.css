@@ -17,6 +17,25 @@ body .slideshow .slide {
 }
 body .slideshow .slide .content {
   padding: 160px 20px 20px 20px;
+  text-align: center;
+}
+body .slideshow .slide .content h1 {
+  font-size: 32pt;
+  line-height: 2em;
+}
+body .slideshow .slide .content h2 {
+  font-size: 40pt;
+  line-height: 1.5em;
+}
+body .slideshow .slide .content.section {
+  padding: 160px 40px 40px 40px;
+}
+body .slideshow .slide .content.section h1 {
+  font-size: 44pt;
+  line-height: 1em;
+}
+body .slideshow .slide .content code {
+  text-align: left;
 }
 body .chat .slideshow {
   transform: scale(0.5, 0.5);

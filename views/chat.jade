@@ -9,10 +9,7 @@ block scripts
 block content
   .row.chat
     .span7
-      .slideshow
-        - for slide in slides
-          .slide
-            .content!= slide.html
+      include slideshow
     .span5
       a(href='/logout') Logout
       .well
