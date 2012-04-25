@@ -9,10 +9,7 @@ block scripts
 block content
   .row.present
     .span7
-      .slideshow
-        - for slide in slides
-          .slide(class=slide.classes)
-            .content!= slide.html
+      include slideshow
     .span5
       a(href='/logout') Logout
       .well

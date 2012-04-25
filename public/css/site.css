@@ -19,6 +19,17 @@ body .slideshow .slide .content {
   padding: 160px 20px 20px 20px;
   text-align: center;
 }
+body .slideshow .slide .content h1 {
+  font-size: 32pt;
+  line-height: 1.5em;
+}
+body .slideshow .slide .content h2 {
+  font-size: 40pt;
+  line-height: 1.5em;
+}
+body .slideshow .slide .content.section h1 {
+  font-size: 44pt;
+}
 body .slideshow .slide .content code {
   text-align: left;
 }
