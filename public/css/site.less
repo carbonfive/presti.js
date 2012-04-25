@@ -45,11 +45,29 @@ body {
     }
   }
 
+  #sidebar { 
+    height: 768px;
+    .well {
+      position: relative;
+      height: 95%;
+    }
+   }
+  .logout { float: right; }
+
   #message {
-    width: 100%;
+    width: 95%;
   }
 
   #messages {
-    img.profile { width: 32px; }
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    top: 140px;
+    overflow-y: auto;
+    .message {
+      margin: 8px 0;
+      img.profile { width: 32px; }
+    }
   }
 }

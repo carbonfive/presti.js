@@ -9,9 +9,9 @@ block scripts
 block content
   .container-fluid
     .row-fluid.chat
-      .span3
-        a(href='/logout') Logout
+      .span3#sidebar
         .well
+          a.logout(href='/logout') Logout
           h4 Chat
           input#message
           div#messages

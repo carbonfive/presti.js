@@ -37,9 +37,30 @@ body .slideshow .slide .content.section h1 {
 body .slideshow .slide .content code {
   text-align: left;
 }
-body #message {
-  width: 100%;
+body #sidebar {
+  height: 768px;
 }
-body #messages img.profile {
+body #sidebar .well {
+  position: relative;
+  height: 95%;
+}
+body .logout {
+  float: right;
+}
+body #message {
+  width: 95%;
+}
+body #messages {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  top: 140px;
+  overflow-y: auto;
+}
+body #messages .message {
+  margin: 8px 0;
+}
+body #messages .message img.profile {
   width: 32px;
 }
