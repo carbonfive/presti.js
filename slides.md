@@ -19,6 +19,8 @@
 !SLIDE section
 # What is Node.js?
 
+* [http://nodejs.org](http://nodejs.org)
+
 !SLIDE
 # What is Node.js?
 *  Javascript server based on V8
@@ -30,7 +32,7 @@
 !SLIDE
 # What is Node.js?
 *  Non-blocking from the ground up
-*  built to scale
+   built to scale
 
 !SLIDE
 # What is Node.js?
@@ -95,8 +97,56 @@
 *  Geddy.js
 *  Tower.js
 
+!SLIDE
+# configuration
+
+    var express = require('express');
+    var app = express.createServer();
+
+    app.configure(function() {
+      app.use(express.errorHandler({ showStack: true, dumpExceptions: true }));
+      app.set('view engine','jade');
+      app.set('view options', { layout: false });
+      app.use(express.bodyParser());
+      app.use(express.compiler({ src:__dirname + '/public', enable:['less'] }));
+      app.use(express.static(__dirname + '/public'));
+    });
+
+!SLIDE
+# routes
+
+    app.get('/', function(request, response, next) {
+      response.render('home', { slides : slides });
+    });
+
+    app.get('/chat', authenticate, function(request, response, next) {
+      response.render('chat', { slides : slides });
+    });
+
+    app.listen(config.port || 80);
+
+!SLIDE
+# authetication
+    function authenticate(request, response, next) {
+      if(!request.isAuthenticated()) {
+        request.authenticate(function(error, authenticated) {
+          if(error) next(new Error('Problem authenticating'));
+          else if(authenticated === true) {
+            return response.redirect(request.originalUrl);
+          }
+          else if(authenticated === false) {
+            return next(new Error('Access Denied!'));
+          } else {}
+        });
+      }
+    }
+
 !SLIDE section
-# WebSockets (real time applications)
+# WebSockets
+
+!SLIDE
+# WebSockets
+* Real-time Applications
 
 !SLIDE
 # WebSockets
@@ -105,6 +155,42 @@
 !SLIDE
 # WebSockets
 *  Socket.io
+
+!SLIDE
+# Server
+
+    require io = require('socket.io').listen(app);
+
+    io.on('connection', onConnect);
+    function onConnect(socket) {
+      socket.on('message', sendMessage);
+      socket.on('disconnect', onDisconnect);
+      socket.emit('message', 'Hello World!');
+
+      function sendMessage(messageBody) {
+        socket.broadcast.emit('message', messageBody);
+      }
+
+      function onDisconnect() {
+        socket.broadcast.emit('message', 'Someone left!');
+      }
+    }
+
+!SLIDE
+# Client
+
+    var show = io.connect();
+
+    show.on('message', onMessage);
+    function onMessage(messageBody) {
+      $('#messages').append(messageBody);
+    }
+ 
+!SLIDE
+# Other Features
+* Handshake
+* Namespaces
+* Rooms
 
 !SLIDE
 # Datastorage

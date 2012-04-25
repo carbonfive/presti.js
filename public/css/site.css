@@ -54,6 +54,9 @@ body .slideshow .slide .content h2 {
 }
 body .slideshow .slide .content code {
   text-align: left;
+  font-size: 16pt;
+  margin: 10px;
+  line-height: 18pt;
 }
 body #sidebar {
   height: 768px;
