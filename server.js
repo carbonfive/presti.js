@@ -47,14 +47,7 @@ app.get('/present', authenticate, isPresenter, function(request, response, next)
   response.render('present', { slides : slides });
 });
 
-if (cluster.isMaster) {
-  console.log("CPUS: " + os.cpus().length);
-  for (var i = 0; i < os.cpus().length / 2; i++) {
-    var worker = cluster.fork();
-  }
-} else {
-  app.listen(config.port || 80);
-}
+app.listen(config.port || 80);
 
 function authenticate(request, response, next) {
   if(request.isAuthenticated()) next();
