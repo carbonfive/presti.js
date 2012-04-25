@@ -49,7 +49,7 @@ jQuery(function($){
               .add(gen('strong','name').text(data.from.name))
               .text(' says:'))
         .add(gen('div','body').text(data.message)));
-    $('#messages').append(message.el);
+    $('#messages').prepend(message.el);
   }
 
   function onMessageKeyReleased(event) {

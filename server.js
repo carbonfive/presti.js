@@ -43,33 +43,26 @@ app.get('/logout', function(request, response, next) {
   response.redirect('/');
 });
 
-app.get('/present', authenticate, isPresenter, function(request, response, next) {
-  response.render('present', { slides : slides });
-});
-
 app.listen(config.port || 80);
 
 function authenticate(request, response, next) {
-  if(request.isAuthenticated()) next();
+  if(request.isAuthenticated()) {
+    if(request.getAuthDetails().user.email == 'rudy@carbonfive.com' ||
+       request.getAuthDetails().user.email == 'alex@carbonfive.com') {
+      request.session['presenter'] = true;
+      request.session.save();
+    }
+    next();
+  }
   else {
     request.authenticate(function(error, authenticated) {
       if(error) next(new Error('Problem authenticating'));
       else if(authenticated === true) {
-        return next();
+        return response.redirect(request.originalUrl);
       }
       else if(authenticated === false) {
         return next(new Error('Access Denied!'));
       } else {}
     });
   }
-}
-
-function isPresenter(request, response, next) {
-  if(request.getAuthDetails().user.email == 'rudy@carbonfive.com' ||
-     request.getAuthDetails().user.email == 'alex@carbonfive.com') {
-    request.session['presenter'] = true;
-    request.session.save();
-    return next();
-  }
-  return response.redirect('/');
 }

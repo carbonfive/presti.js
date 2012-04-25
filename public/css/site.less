@@ -33,35 +33,46 @@ body {
         padding: 160px 20px 20px 20px;
         text-align: center;
 
-        h1 { font-size: 32pt; line-height: 2em; }
-        h2 { font-size: 40pt; line-height: 1.5em; }
+        font-size: 32pt;
 
-        &.section {
-          padding: 160px 40px 40px 40px;
-          h1 { font-size: 44pt; line-height: 1em; }
+        ul, li, p { 
+          font-size: 32pt;
+          line-height: 32pt;
+
+          ul, li, p { font-size: 1em; line-height: 1.0em; }
         }
+        ul { list-style: none; }
+        li { margin-top: 32pt; }
+        h1 { font-size: 44pt; line-height: 44pt; }
+        h2 { font-size: 40pt; line-height: 60pt; }
         code { text-align: left; }
       }
     }
   }
 
-  .chat {
-    .slideshow {
-      .scale(0.5);
+  #sidebar { 
+    height: 768px;
+    .well {
+      position: relative;
+      height: 95%;
     }
-  }
-
-  .present {
-    .slideshow {
-      .scale(0.5);
-    }
-  }
+   }
+  .logout { float: right; }
 
   #message {
-    width: 100%;
+    width: 95%;
   }
 
   #messages {
-    img.profile { width: 32px; }
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    top: 140px;
+    overflow-y: auto;
+    .message {
+      margin: 8px 0;
+      img.profile { width: 32px; }
+    }
   }
 }

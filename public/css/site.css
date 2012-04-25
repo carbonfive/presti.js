@@ -18,68 +18,67 @@ body .slideshow .slide {
 body .slideshow .slide .content {
   padding: 160px 20px 20px 20px;
   text-align: center;
+  font-size: 32pt;
+}
+body .slideshow .slide .content ul,
+body .slideshow .slide .content li,
+body .slideshow .slide .content p {
+  font-size: 32pt;
+  line-height: 32pt;
+}
+body .slideshow .slide .content ul ul,
+body .slideshow .slide .content li ul,
+body .slideshow .slide .content p ul,
+body .slideshow .slide .content ul li,
+body .slideshow .slide .content li li,
+body .slideshow .slide .content p li,
+body .slideshow .slide .content ul p,
+body .slideshow .slide .content li p,
+body .slideshow .slide .content p p {
+  font-size: 1em;
+  line-height: 1.0em;
+}
+body .slideshow .slide .content ul {
+  list-style: none;
+}
+body .slideshow .slide .content li {
+  margin-top: 32pt;
 }
 body .slideshow .slide .content h1 {
-  font-size: 32pt;
-  line-height: 2em;
+  font-size: 44pt;
+  line-height: 44pt;
 }
 body .slideshow .slide .content h2 {
   font-size: 40pt;
-  line-height: 1.5em;
-}
-body .slideshow .slide .content.section {
-  padding: 160px 40px 40px 40px;
-}
-body .slideshow .slide .content.section h1 {
-  font-size: 44pt;
-  line-height: 1em;
+  line-height: 60pt;
 }
 body .slideshow .slide .content code {
   text-align: left;
 }
-body .chat .slideshow {
-  transform: scale(0.5, 0.5);
-  transform-origin: 0%, 0%;
-  -ms-transform: scale(0.5, 0.5);
-  /* IE 9 */
-
-  -ms-transform-origin: 0% 0%;
-  -webkit-transform: scale(0.5, 0.5);
-  /* Safari and Chrome */
-
-  -webkit-transform-origin: 0% 0%;
-  -o-transform: scale(0.5, 0.5);
-  /* Opera */
-
-  -o-transform-origin: 0% 0%;
-  -moz-transform: scale(0.5, 0.5);
-  /* Firefox */
-
-  -moz-transform-origin: 0% 0%;
+body #sidebar {
+  height: 768px;
 }
-body .present .slideshow {
-  transform: scale(0.5, 0.5);
-  transform-origin: 0%, 0%;
-  -ms-transform: scale(0.5, 0.5);
-  /* IE 9 */
-
-  -ms-transform-origin: 0% 0%;
-  -webkit-transform: scale(0.5, 0.5);
-  /* Safari and Chrome */
-
-  -webkit-transform-origin: 0% 0%;
-  -o-transform: scale(0.5, 0.5);
-  /* Opera */
-
-  -o-transform-origin: 0% 0%;
-  -moz-transform: scale(0.5, 0.5);
-  /* Firefox */
-
-  -moz-transform-origin: 0% 0%;
+body #sidebar .well {
+  position: relative;
+  height: 95%;
+}
+body .logout {
+  float: right;
 }
 body #message {
-  width: 100%;
+  width: 95%;
 }
-body #messages img.profile {
+body #messages {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  top: 140px;
+  overflow-y: auto;
+}
+body #messages .message {
+  margin: 8px 0;
+}
+body #messages .message img.profile {
   width: 32px;
 }
