@@ -17,6 +17,10 @@ body .slideshow .slide {
 }
 body .slideshow .slide .content {
   padding: 160px 20px 20px 20px;
+  text-align: center;
+}
+body .slideshow .slide .content code {
+  text-align: left;
 }
 body .chat .slideshow {
   transform: scale(0.5, 0.5);

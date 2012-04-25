@@ -11,7 +11,7 @@ block content
     .span7
       .slideshow
         - for slide in slides
-          .slide
+          .slide(class=slide.classes)
             .content!= slide.html
     .span5
       a(href='/logout') Logout
