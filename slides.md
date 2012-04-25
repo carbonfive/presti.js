@@ -4,7 +4,7 @@
 
   [@sivoh](http://twitter.com/sivoh)
 
-* _Rudy Jahchan_ - Team Lead
+* _Rudy Jahchan_ - Team Lead Supreme
 
   [@rudy](http://twitter.com/rudy)
 
