@@ -21,14 +21,18 @@ body .slideshow .slide .content {
 }
 body .slideshow .slide .content h1 {
   font-size: 32pt;
-  line-height: 1.5em;
+  line-height: 2em;
 }
 body .slideshow .slide .content h2 {
   font-size: 40pt;
   line-height: 1.5em;
 }
+body .slideshow .slide .content.section {
+  padding: 160px 40px 40px 40px;
+}
 body .slideshow .slide .content.section h1 {
   font-size: 44pt;
+  line-height: 1em;
 }
 body .slideshow .slide .content code {
   text-align: left;
