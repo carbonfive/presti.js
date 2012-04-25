@@ -11,6 +11,8 @@ jQuery(function($){
 
   show.on('sync', onSync);
   show.on('message', onMessage);
+  show.on('joined', onJoined);
+  show.on('disconnected', onDisconnected);
 
   $(document).keyup(onKeyReleased);
   $('#message').keyup(onMessageKeyReleased);
@@ -60,6 +62,17 @@ jQuery(function($){
       $('#message').val('');
       $(document).focus();
     }
+  }
+
+  function onJoined(data) {
+    $('#online').append(
+      gen('img','member', { id : "online-" + data.connection,
+                            src : data.picture,
+                            alt : data.name }).el());
+  }
+
+  function onDisconnected(data) {
+    $('#online-' + data.id).remove();
   }
 
   function gen( name, clss, atts ) {
